@@ -109,7 +109,7 @@
 &kp LEFT_WIN        &kp LEFT_CONTROL  &kp LEFT_ALT  &lt_to_layer_0 1 TAB  &lt 2 SPACE  &lt_to_layer_0 5 ESCAPE      &kp BACKSPACE  &lt 2 ENTER                             &mt RIGHT_CONTROL MINUS
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN>;
         };
 
         SYMBOL {
@@ -138,7 +138,7 @@
 &trans            &trans  &trans  &trans  &trans   &trans      &kp DELETE  &kp ENTER                                            &kp ESCAPE
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN>;
         };
 
         MOUSE {
