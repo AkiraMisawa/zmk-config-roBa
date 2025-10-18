@@ -12,10 +12,6 @@
 
 &trackball {
     scroll-layers = <5>;
-    // Reverse scroll direction (both X and Y)
-    // This makes the scroll direction identical to Windows
-    invert-x;
-    invert-y;
 };
 
 / {
