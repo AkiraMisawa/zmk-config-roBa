@@ -32,6 +32,16 @@
     combos {
         compatible = "zmk,combos";
 
+        unsco {
+            bindings = <&kp UNDERSCORE>;
+            key-positions = <8 9>;
+        };
+
+        dash {
+            bindings = <&kp MINUS>;
+            key-positions = <9 10>;
+        };
+
         tab {
             bindings = <&kp TAB>;
             key-positions = <11 12>;
@@ -80,6 +90,24 @@
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
+
+        macro_switch_to_win: macro_switch_to_win {
+            compatible = "zmk,behavior-macro";
+            label = "WIN_CONNECT";
+            bindings = <&bt BT_SEL 0 &to 0>; // BLE Profile 0 + Layer 0
+        };
+
+        macro_switch_to_mac: macro_switch_to_mac {
+            compatible = "zmk,behavior-macro";
+            label = "MAC_CONNECT";
+            bindings = <&bt BT_SEL 1 &to 8>; // BLE Profile 1 + mac_layer (8)
+        };
+
+        macro_switch_to_work_win: macro_switch_to_work_win {
+            compatible = "zmk,behavior-macro";
+            label = "WIN_WORK";
+            bindings = <&bt BT_SEL 2 &to 0>; // 会社Windows
+        };
     };
 
     behaviors {
@@ -100,7 +128,7 @@
             bindings = <
 &mt LEFT_ALT Q      &kp W             &kp E         &kp R                 &kp T                                                    &kp Y        &kp U  &kp I     &kp O     &kp P
 &mt LEFT_CONTROL A  &kp S             &kp D         &kp F                 &kp G        &kp LS(LG(S))                &to 6          &kp H        &kp J  &lt 5 K   &kp L     &lt_to_layer_0 5 APOSTROPHE
-&mt LEFT_SHIFT Z    &kp X             &kp C         &kp V                 &kp B        &none                        &none          &kp N        &kp M  &mkp MB1  &mkp MB2  &mt RIGHT_SHIFT SLASH
+&mt LEFT_SHIFT Z    &kp X             &kp C         &kp V                 &kp B        &kp RALT                        &kp LA(GRAVE)          &kp N        &kp M  &mkp MB1  &mkp MB2  &mt RIGHT_SHIFT SLASH
 &kp LEFT_WIN        &kp LEFT_CONTROL  &kp LEFT_ALT  &lt_to_layer_0 1 TAB  &lt 2 SPACE  &lt_to_layer_0 5 ESCAPE      &kp BACKSPACE  &lt 2 ENTER                             &mt RIGHT_CONTROL MINUS
             >;
 
@@ -155,10 +183,10 @@
         };
 
         layer_6 {
-            bindings = <
-&trans  &trans        &trans        &trans        &trans                           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+            bindings = <    
+&trans  &macro_switch_to_win        &trans        &trans        &trans                           &macro_switch_to_win  &macro_switch_to_mac  &macro_switch_to_work_win　&bt BT_SEL 3  &bt BT_SEL 4
 &trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans        &trans        &trans        &trans        &trans
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans      &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
+&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans      &bootloader  &trans        &macro_switch_to_mac        &trans        &trans        &bt BT_CLR
 &trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans                                                  &bt BT_CLR_ALL
             >;
         };
@@ -170,6 +198,20 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
+        };
+
+        mac_layer {
+            label = "MAC_LAYER";
+            layer = <8>;
+            bindings = <
+&mt LEFT_ALT Q      &kp W             &kp E         &kp R                 &kp T                                                    &kp Y        &kp U  &kp I     &kp O     &kp P
+&mt LEFT_CONTROL A  &kp S             &kp D         &kp F                 &kp G        &kp LS(LG(S))                &to 6          &kp H        &kp J  &lt 5 K   &kp L     &lt_to_layer_0 5 APOSTROPHE
+&mt LEFT_SHIFT Z    &kp X             &kp C         &kp V                 &kp B        &kp LANG1                        &kp LANG2          &kp N        &kp M  &mkp MB1  &mkp MB2  &mt RIGHT_SHIFT SLASH
+&kp LEFT_WIN        &kp LEFT_ALT  &kp LEFT_GUI  &lt_to_layer_0 1 TAB  &lt 2 SPACE  &lt_to_layer_0 5 ESCAPE      &kp BACKSPACE  &lt 2 ENTER                             &mt RIGHT_CONTROL MINUS
+            >;
+
+            // Trackball scroll mode enabled while this layer is active
+    sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN>;
         };
     };
 };
