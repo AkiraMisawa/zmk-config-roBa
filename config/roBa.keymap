@@ -109,7 +109,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             label = "WIN_WORK";
-            bindings = <&bt BT_SEL 2 &to 0>; // 会社Windows
+            bindings = <&bt BT_SEL 2 &to 0>; // Work Windows
         };
     };
 
@@ -204,8 +204,6 @@
         };
 
         mac_layer {
-            label = "MAC_LAYER";
-            layer = <8>;
             bindings = <
 &mt LEFT_ALT Q      &kp W             &kp E         &kp R                 &kp T                                                    &kp Y        &kp U  &kp I     &kp O     &kp P
 &mt LEFT_CONTROL A  &kp S             &kp D         &kp F                 &kp G        &kp LS(LG(S))                &to 6          &kp H        &kp J  &lt 5 K   &kp L     &lt_to_layer_0 5 APOSTROPHE
