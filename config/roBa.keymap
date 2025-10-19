@@ -93,18 +93,21 @@
 
         macro_switch_to_win: macro_switch_to_win {
             compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
             label = "WIN_CONNECT";
             bindings = <&bt BT_SEL 0 &to 0>; // BLE Profile 0 + Layer 0
         };
 
         macro_switch_to_mac: macro_switch_to_mac {
             compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
             label = "MAC_CONNECT";
             bindings = <&bt BT_SEL 1 &to 8>; // BLE Profile 1 + mac_layer (8)
         };
 
         macro_switch_to_work_win: macro_switch_to_work_win {
             compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
             label = "WIN_WORK";
             bindings = <&bt BT_SEL 2 &to 0>; // 会社Windows
         };
