@@ -1,0 +1,23 @@
+{
+  "id": "roba-reset",
+  "name": "roBa settings reset",
+  "firmware": "zmk",
+  "group": "roba",
+  "board": "seeeduino_xiao_ble",
+  "shield": "settings_reset",
+  "file": "roba-reset.uf2",
+  "format": "uf2",
+  "role": "settings_reset",
+  "studio": false,
+  "uf2": {
+    "family": 2913282112,
+    "blocks": 194,
+    "start": 159744,
+    "end": 209408
+  },
+  "size": 49664,
+  "west": "roba-reset.west.yml",
+  "zmk_sha": "acfd8e5ea76cf23ad1c9b6b99848f97a95224257",
+  "zephyr_sha": "dacab4875df72109b96cc8977547a0dc04875bcd",
+  "image": "docker.io/zmkfirmware/zmk-build-arm@sha256:0979a8de325e3d822e48bd8d1d9efaee2984ad3750253119f920a342f0ce5cde"
+}

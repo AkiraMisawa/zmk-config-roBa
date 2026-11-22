@@ -1,0 +1,95 @@
+{
+  "schema": 1,
+  "source": {
+    "repository": "AkiraMisawa/zmk-config-roBa",
+    "sha": "3cae1277f403d3d258416c3233fcc970b247d975",
+    "ref": "refs/heads/main"
+  },
+  "run": {
+    "id": 45065384947,
+    "url": "https://github.com/AkiraMisawa/zmk-config-roBa/actions/runs/45065384947"
+  },
+  "built_at": "2026-11-22T20:18:07Z",
+  "builds": [
+    {
+      "id": "roba-right",
+      "name": "roBa right",
+      "firmware": "zmk",
+      "group": "roba",
+      "board": "seeeduino_xiao_ble",
+      "shield": "roBa_R",
+      "file": "roba-right.uf2",
+      "format": "uf2",
+      "role": "central",
+      "studio": true,
+      "uf2": {
+        "family": 2913282112,
+        "blocks": 1025,
+        "start": 159744,
+        "end": 422144
+      },
+      "size": 262400,
+      "west": "roba-right.west.yml",
+      "zmk_sha": "acfd8e5ea76cf23ad1c9b6b99848f97a95224257",
+      "zephyr_sha": "dacab4875df72109b96cc8977547a0dc04875bcd",
+      "image": "docker.io/zmkfirmware/zmk-build-arm@sha256:0979a8de325e3d822e48bd8d1d9efaee2984ad3750253119f920a342f0ce5cde",
+      "snippet": "studio-rpc-usb-uart",
+      "view": "roba-right.view.json",
+      "sha256": "77dfc3472f91bac2d29afafe04ad3020cd7a3003948b8e90a07ebd64b3ef69ec",
+      "view_sha256": "d1893e1378fe2b46f5ca7779937a2e8a76f29af0d2ef979cfd9aed48cbba52e2",
+      "west_sha256": "5806159ff8465cfe515efbcd3878667a24b5c70ced1542bd3dcfddf5cffb4643"
+    },
+    {
+      "id": "roba-left",
+      "name": "roBa left",
+      "firmware": "zmk",
+      "group": "roba",
+      "board": "seeeduino_xiao_ble",
+      "shield": "roBa_L",
+      "file": "roba-left.uf2",
+      "format": "uf2",
+      "role": "peripheral",
+      "studio": false,
+      "uf2": {
+        "family": 2913282112,
+        "blocks": 691,
+        "start": 159744,
+        "end": 336640
+      },
+      "size": 176896,
+      "west": "roba-left.west.yml",
+      "zmk_sha": "acfd8e5ea76cf23ad1c9b6b99848f97a95224257",
+      "zephyr_sha": "dacab4875df72109b96cc8977547a0dc04875bcd",
+      "image": "docker.io/zmkfirmware/zmk-build-arm@sha256:0979a8de325e3d822e48bd8d1d9efaee2984ad3750253119f920a342f0ce5cde",
+      "view": "roba-left.view.json",
+      "sha256": "c04f3267c83d12b8a8506999e006fae8ed4c2f9c70eb6d1a6f24b4ef4b932cdd",
+      "view_sha256": "5b84929c401a9fd03fd303e3a56899b63574f5b8eb2262e36c2c5741b418424f",
+      "west_sha256": "7be3b7b1abde63aefb209082b5a9e9ee6f2d161bd1e03f5bc402bac091ed9f67"
+    },
+    {
+      "id": "roba-reset",
+      "name": "roBa settings reset",
+      "firmware": "zmk",
+      "group": "roba",
+      "board": "seeeduino_xiao_ble",
+      "shield": "settings_reset",
+      "file": "roba-reset.uf2",
+      "format": "uf2",
+      "role": "settings_reset",
+      "studio": false,
+      "uf2": {
+        "family": 2913282112,
+        "blocks": 194,
+        "start": 159744,
+        "end": 209408
+      },
+      "size": 49664,
+      "west": "roba-reset.west.yml",
+      "zmk_sha": "acfd8e5ea76cf23ad1c9b6b99848f97a95224257",
+      "zephyr_sha": "dacab4875df72109b96cc8977547a0dc04875bcd",
+      "image": "docker.io/zmkfirmware/zmk-build-arm@sha256:0979a8de325e3d822e48bd8d1d9efaee2984ad3750253119f920a342f0ce5cde",
+      "sha256": "6754faf30a33318e9448bd4c65875d07de854eac8996b582c1890fe150fb21f6",
+      "west_sha256": "7be3b7b1abde63aefb209082b5a9e9ee6f2d161bd1e03f5bc402bac091ed9f67"
+    }
+  ]
+}

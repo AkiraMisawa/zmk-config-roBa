@@ -1,0 +1,24 @@
+{
+  "id": "roba-left",
+  "name": "roBa left",
+  "firmware": "zmk",
+  "group": "roba",
+  "board": "seeeduino_xiao_ble",
+  "shield": "roBa_L",
+  "file": "roba-left.uf2",
+  "format": "uf2",
+  "role": "peripheral",
+  "studio": false,
+  "uf2": {
+    "family": 2913282112,
+    "blocks": 691,
+    "start": 159744,
+    "end": 336640
+  },
+  "size": 176896,
+  "west": "roba-left.west.yml",
+  "zmk_sha": "acfd8e5ea76cf23ad1c9b6b99848f97a95224257",
+  "zephyr_sha": "dacab4875df72109b96cc8977547a0dc04875bcd",
+  "image": "docker.io/zmkfirmware/zmk-build-arm@sha256:0979a8de325e3d822e48bd8d1d9efaee2984ad3750253119f920a342f0ce5cde",
+  "view": "roba-left.view.json"
+}
