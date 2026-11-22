@@ -1,0 +1,30 @@
+{
+  "firmware": "zmk",
+  "zmk": {
+    "image": "docker.io/zmkfirmware/zmk-build-arm@sha256:0979a8de325e3d822e48bd8d1d9efaee2984ad3750253119f920a342f0ce5cde"
+  },
+  "builds": [
+    {
+      "id": "roba-right",
+      "name": "roBa right",
+      "group": "roba",
+      "board": "seeeduino_xiao_ble",
+      "shield": "roBa_R",
+      "snippet": "studio-rpc-usb-uart"
+    },
+    {
+      "id": "roba-left",
+      "name": "roBa left",
+      "group": "roba",
+      "board": "seeeduino_xiao_ble",
+      "shield": "roBa_L"
+    },
+    {
+      "id": "roba-reset",
+      "name": "roBa settings reset",
+      "group": "roba",
+      "board": "seeeduino_xiao_ble",
+      "shield": "settings_reset"
+    }
+  ]
+}
