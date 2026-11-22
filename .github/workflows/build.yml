@@ -1,19 +1,18 @@
 # Builds the firmware described by keyballer.json with Keyballer's reusable workflow and
-# publishes it on the `firmware` branch for the Keyballer app (main only).
+# publishes it on the `firmware` branch for the Keyballer app.
 name: Build firmware
 
 on:
   push:
+    branches: [main]
   workflow_dispatch:
 
 concurrency:
-  group: build-firmware-${{ github.ref }}
+  group: build-firmware
   cancel-in-progress: true
 
 jobs:
   build:
-    uses: AkiraMisawa/keyballer/.github/workflows/build-zmk.yml@zmk-build
-    with:
-      keyballer_ref: zmk-build
+    uses: AkiraMisawa/keyballer/.github/workflows/build-zmk.yml@main
     permissions:
       contents: write
